@@ -1,0 +1,26 @@
+NAME="libvisio0.1"
+VERSION=0.1.1
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="Visio import filter library"
+DESCRIPTION="Libvisio is a library providing ability to interpret and import
+Visio diagrams into various applications."
+HOMEPAGE="https://wiki.documentfoundation.org/DLP/Libraries/libvisio"
+SRC_URI="http://dev-www.libreoffice.org/src/libvisio/libvisio-${VERSION}.tar.xz"
+SRC_DIR="libvisio-${VERSION}"
+PATCH_URI="0.0.11-ldflags.patch
+	   0.0.11-vpath.patch"
+
+PKG_NAMES="libvisio-tools ${NAME}_1 ${NAME}-devel ${NAME}-doc"
+libvisio_tools_CATEGORY="Graphics"
+libvisio_tools_OBSOLETES="libvisio-bin"
+libvisio_tools_SUMMARY="Visio diagram converters"
+libvisio_tools_CONTENTS="usr/bin/*.exe"
+libvisio0_1_1_SUMMARY="${SUMMARY} (runtime)"
+libvisio0_1_1_CONTENTS="--exclude=html usr/bin/*-0.1-1.dll usr/share/doc/"
+libvisio0_1_devel_SUMMARY="${SUMMARY} (development)"
+libvisio0_1_devel_CONTENTS="usr/include/ usr/lib/"
+libvisio0_1_doc_SUMMARY="${SUMMARY} (API documentation)"
+libvisio0_1_doc_CONTENTS="usr/share/doc/${NAME}/html/"
+
+KEEP_LA_FILES="none"
