@@ -1,6 +1,6 @@
 NAME="libvisio0.1"
 VERSION=0.1.1
-RELEASE=2
+RELEASE=3
 CATEGORY="Libs"
 SUMMARY="Visio import filter library"
 DESCRIPTION="Libvisio is a library providing ability to interpret and import
